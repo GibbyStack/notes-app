@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const { NOTES_APP_MONGODB_HOST, NOTES_APP_MONGODB_DATABASE } = process.env;
-const MONGODB_URI = `mongodb://${NOTES_APP_MONGODB_HOST}/${NOTES_APP_MONGODB_DATABASE}`;
+const { NOTES_APP_MONGODB_DATABASE, NOTES_APP_MONGODB_USER, NOTES_APP_MONGODB_PASSWORD } = process.env;
+const MONGODB_URI = `mongodb+srv://${NOTES_APP_MONGODB_USER}:${NOTES_APP_MONGODB_PASSWORD}@clusternotes.qjyfs.mongodb.net/${NOTES_APP_MONGODB_DATABASE}?retryWrites=true&w=majority`;
 
 mongoose.connect(MONGODB_URI, {
         useUnifiedTopology: true,
